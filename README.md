@@ -1,4 +1,5 @@
 # 中山大学挣闲钱系统
+## 0、软件设计综合实验要求Check List
 ## 1、About（项目概况）
 ## 2、Team profile（团队组建与分工）
 ## 3、Investigation（项目前期调研/竞品分析）
