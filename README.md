@@ -28,7 +28,7 @@
 
 ## X1 meeting-records
 inception meeting (yy/mm/dd)
-## X2 KANBAN
+## X2 [KANBAN](https://github.com/sysu-change/sysu-change/projects)
 ## X3 auditing-records
 ## X4 Tech/Work Report
 学号-title
