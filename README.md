@@ -35,4 +35,4 @@ inception meeting (yy/mm/dd)
 ## X5 Final Report
 学号-title
 小组分工与贡献率说明
-## X6小组成员学习文档
+## X6 小组成员学习文档
