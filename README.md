@@ -27,13 +27,13 @@
 	- 9.1 XX短视频
 	- 9.2 XX短视频
 
-X1. meeting-records
-inception meeting (yy/mm/dd)
-X2. [KANBAN](https://github.com/sysu-change/projects)
-X3. auditing-records
-X4. Tech/Work Report
- 	- 学号-title
-X5. Final Report
-  - 学号-title
-  - 小组分工与贡献率说明
-X6. 小组成员学习文档
+X1. meeting-records  
+inception meeting (yy/mm/dd)  
+X2. [KANBAN](https://github.com/sysu-change/projects)  
+X3. auditing-records  
+X4. Tech/Work Report  
+ 	- 学号-title  
+X5. Final Report  
+  - 学号-title  
+  - 小组分工与贡献率说明  
+X6. 小组成员学习文档  
