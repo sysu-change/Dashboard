@@ -10,12 +10,12 @@
 4. [Vision（项目愿景）](project/vision.md)
 5. [Product Backlog （产品特性库）](project/product_baccklog.md)
 6. Requirement specification（需求规格说明书）
-    - 6.1 [Usecase Diagram（用例图）](Requirement_specification/Usecase_Diagram.md)
-    - 6.2 [Use Cases（用例+活动图）](Requirement_specification/Use_Cases.md)
-    - 6.3 [Domain Model（领域模型）](Requirement_specification/Domain_Model.md)
-    - 6.4 [State Model（状态模型）](Requirement_specification/State_Model.md)
-    - 6.5 [System Sequence Diagram（功能模型）](Requirement_specification/System_Sequence_Diagram.md)
-    - 6.6 [Supplementary Requirements（补充需求）](Requirement_specification/Supplementary_Requirements.md)
+    - 6.1 [Usecase Diagram（用例图）](Requirement/Usecase_Diagram.md)
+    - 6.2 [Use Cases（用例+活动图）](Requirement/Use_Cases.md)
+    - 6.3 [Domain Model（领域模型）](Requirement/Domain_Model.md)
+    - 6.4 [State Model（状态模型）](Requirement/State_Model.md)
+    - 6.5 [System Sequence Diagram（功能模型）](Requirement/System_Sequence_Diagram.md)
+    - 6.6 [Supplementary Requirements（补充需求）](Requirement/Supplementary_Requirements.md)
 7. Design（设计说明书）
     - 7.1 [UI design（界面设计）](design/UI.md)
     - 7.2 [Database design（数据库设计）](design/Database.md)
