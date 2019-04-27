@@ -1,6 +1,4 @@
 # 挣闲钱
-## [学习与帮助文档](help/help.md)  
-
 
 
 0. [软件设计综合实验要求Check List](project/check_list.md)
