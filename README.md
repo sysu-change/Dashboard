@@ -37,7 +37,7 @@ X1. meeting-records
 
 X2. [KANBAN](https://github.com/orgs/sysu-change/projects)  
 
-X3. auditing-records  
+X3. [auditing-records](record_documents/auditing_records.md)
 
 X4. Tech/Work Report  
   - 学号-title  
