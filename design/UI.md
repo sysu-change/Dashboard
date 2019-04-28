@@ -15,14 +15,14 @@
 
 #### 首页
 
-![image1](/image/image1.png)
+   ![image1](/image/image1.png)
  
 #### 登录
 
-![image2](/image/image2.png)
+   ![image2](/image/image2.png)
 
 #### 注册
 
-![image3](/image/image3.png)
+   ![image3](/image/image3.png)
  
  
