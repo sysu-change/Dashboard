@@ -26,7 +26,7 @@
     
 #### 注册   
    ![image3](/image/image3.png)
-     图3
+      图3
    
  
  
