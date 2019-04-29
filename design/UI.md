@@ -14,7 +14,7 @@
 [第0轮迭代UI](https://www.xiaopiu.com/project?proid=5cc14ff16967a47ec7cab842)
 
 #### 首页
-   ![image1](/image/image1.png)
+   ![image1](https://github.com/sysu-change/Dashboard/blob/master/image/image1.png)
      图1
    
 
