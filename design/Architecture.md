@@ -42,7 +42,7 @@ Github是一个代码托管平台和开发者社区，开发者可以在Github�
 │   ├── app.py # App入口
 │   ├── match # 配置文件解析源码
 │   │   └── __init__.py
-│   │   └── match.py # 处理密码加密以及手机号等	│   │				  格式匹配问题
+│   │   └── match.py # 处理密码加密以及手机号等格式匹配问题
 │   ├── dbTools # 数据库操作
 │   │   └── __init__.py
 │   │   └── dbConfig.py		#数据库配置文件
