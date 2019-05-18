@@ -21,7 +21,9 @@
     - 7.4 [Architecture design（架构设计）](design/Architecture.md)
     - 7.5 [Usecase design（用例设计）](design/Usecase.md)
 8. 生产规范与指南
-    - 8.1 [代码规范](specification/code_style.md)
+    - 8.1 代码规范
+        -  [前端代码规范](specification/code_style_frontend.md)
+        -  [后端代码规范](specification/code_style_backend.md)
     - 8.2 [REST API 设计规范](specification/API_specification.md)
     - 8.3 [架构设计、详细设计（BCE方法）到应用程序框架映射指南](specification/BCE.md)
     - 8.4 [部署说明](specification/deploy.md)
