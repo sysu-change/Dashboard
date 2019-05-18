@@ -8,7 +8,7 @@
 4. [Vision（项目愿景）](project/vision.md)
 5. [Product Backlog （产品特性库）](project/product_baccklog.md)
 6. Requirement specification（需求规格说明书）
-    - 6.1 [Usecase Diagram（用例图）](Requirement/Usecase_Diagram.md)
+    - 6.1 [ Usecase Diagram and UML Activity Diagram（用例图，业务过程/多泳道图）](Requirement/Usecase_Diagram.md)
     - 6.2 [Use Cases（用例+活动图）](Requirement/Use_Cases.md)
     - 6.3 [Domain Model（领域模型）](Requirement/Domain_Model.md)
     - 6.4 [State Model（状态模型）](Requirement/State_Model.md)
@@ -54,3 +54,4 @@ X5. Final Report
   - [15331035 - Chenxr1997](record_documents/15331035.md)
   - [16341018 - ezlaor](record_documents/16341018.md)
   - [小组分工与贡献率说明](record_documents/contribution.md)
+
