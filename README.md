@@ -30,15 +30,21 @@
 
 
 
-X1. meeting-records  
-  - inception meeting (yy/mm/dd)  
+X1. Meeting-Records  
+  - [Inception Meeting(19/04/25)](project/meeting0.md)
+  - [Iteration 1 Meeting(19/05/05)](project/meeting1.md)
 
 X2. [KANBAN](https://github.com/orgs/sysu-change/projects)  
 
-X3. [auditing-records](record_documents/auditing_records.md)
+X3. [Auditing-Records](record_documents/auditing_records.md)
 
 X4. Tech/Work Report  
-  - 学号-title  
+  -  [16340211 - wanggh8 - xxx(标题)](record_documents/16340211_tech1.md)
+  - [16340210 - wangdchao - xxx(标题)](record_documents/16340210_tech1.md)
+  - [16340209 - tang16340209 - xxx(标题)](record_documents/16340209_tech1.md)
+  - [16340007 - Scott-Cai - xxx(标题)](record_documents/16340007_tech1.md)
+  - [15331035 - Chenxr1997 - xxx(标题)](record_documents/15331035_tech1.md)
+  - [16341018 - ezlaor - xxx(标题)](record_documents/16341018_tech1.md)
 
 X5. Final Report  
   - [16340211 - wanggh8](record_documents/16340211.md)
@@ -47,4 +53,4 @@ X5. Final Report
   - [16340007 - Scott-Cai](record_documents/16340007.md)
   - [15331035 - Chenxr1997](record_documents/15331035.md)
   - [16341018 - ezlaor](record_documents/16341018.md)
-  - [小组分工与贡献率说明]
+  - [小组分工与贡献率说明](record_documents/contribution.md)

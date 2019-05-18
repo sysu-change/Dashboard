@@ -1,4 +1,5 @@
 # 接口API设计
+<<<<<<< Updated upstream
 API文档
 ## 顾客账号
 
@@ -46,7 +47,7 @@ API文档
 
 - 200, OK
 - 400, Bad Request
-   
+  
 
 ### DELETE `/logout` 注销登录
 
@@ -58,4 +59,4 @@ API文档
 
 - 200, OK
 - 401, Unauthorized
-   
+  
