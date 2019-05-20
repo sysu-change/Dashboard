@@ -1,6 +1,4 @@
 # 接口API设计
-<<<<<<< Updated upstream
-API文档
 ## 顾客账号
 
 ### POST `/login` 登录账户
