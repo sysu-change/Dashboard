@@ -52,15 +52,15 @@
     | qid         | INT          | PRI && 和i_num一起 FOREIGN KEY REFERENCES que_item.qid, que_item.i_index | 问卷id号，作为主键对之一                  |
     | i_index     | INT          | PRI && 和did一起 FOREIGN KEY REFERENCES que_item.qid, que_item.i_index | 问题序号，作为主键对之一                  |
     | o_num       | INT          | PRI                                                          | 选项序号，作为主键对之一（文字题时作为1） |
-    | description | VARCHAR(100) |                                                              | 问题的描述，默认为空                      |
+    | description | VARCHAR(100) |                                                              | 选项的描述，默认为空                      |
 
 - que_answer-存储问卷表的回答元数据
 
-    | Field  | Type       | Key                                             | Description                                       |
-    | ------ | ---------- | ----------------------------------------------- | ------------------------------------------------- |
-    | qid    | INT        | PRI && FOREIGN KEY REFERENCES questionnaire.qid | 问卷id号，作为主键对之一                          |
-    | sid    | VARCHAR(8) | PRI && FOREIGN KEY REFERENCES account.sid       | 回答问卷的账户的sid，作为主键对之一               |
-    | verify | INT        |                                                 | 审核状态，0表示未审核，1表示审核通过，2表示未通过 |
+    | Field  | Type       | Key                                             | Description                                                |
+    | ------ | ---------- | ----------------------------------------------- | ---------------------------------------------------------- |
+    | qid    | INT        | PRI && FOREIGN KEY REFERENCES questionnaire.qid | 问卷id号，作为主键对之一                                   |
+    | sid    | VARCHAR(8) | PRI && FOREIGN KEY REFERENCES account.sid       | 回答问卷的账户的sid，作为主键对之一                        |
+    | verify | INT        |                                                 | 审核状态，0表示未审核，1表示审核通过，2表示未通过(默认为0) |
 
 - que_answer_option-存储问卷表的回答的详细内容（选项）
 
