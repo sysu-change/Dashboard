@@ -1,5 +1,5 @@
 # 接口API设计
-## 顾客账号
+## 用户信息接口
 
 ### POST `/login` 登录账户
 
@@ -427,7 +427,7 @@
 } 
 ```
 
-### GET `/user/questionnaire_pre` 
+### GET `/user/questionnaire_pre`
 
 ### **从当前偏移量开始，获取接下去n个数据库问卷，用户已经填写的不传，未发布的问卷不传**
 
