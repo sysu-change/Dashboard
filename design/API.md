@@ -1,4 +1,7 @@
 # 接口API设计
+
+[TOC]
+
 ## 用户信息接口
 
 ### POST `/login` 登录账户
@@ -32,8 +35,8 @@
       "sid": "15331111",
       "name": "阿柴",
       "age": 22,
-      "sex": "男",
-      "grade": "大四",
+      "sex": "0",
+      "grade": "3",
       "major": "工程",
       "phone_num": "13991153616",
       "password": "123456"
@@ -100,8 +103,8 @@
     {
       "name": "阿柴",
       "age": 22,
-      "sex": "男",
-      "grade": "大四",
+      "sex": 1,
+      "grade": 2,
       "major": "工程"
     }    
     ```
@@ -131,7 +134,7 @@
     ```json
     {
 	    "phone_num": "13981153616",
-	    "money": "100"
+	    "money": 100
     }    
     ```
   - parameter content type: `application/json`
@@ -160,7 +163,7 @@
     {
 	    "pay_phone": "13981153616",
 	    "password":"123456",
-      "money": "100"
+      "money": 100
     }    
     ```
   - parameter content type: `application/json`
@@ -191,8 +194,7 @@
     ```json
     {
 	    "type":1, //1表示问卷
-	    "sid":"16340209",
-      "title": "中山大学睡眠情况调查",
+	    "title": "中山大学睡眠情况调查",
       "description":"这是一份对中大学生进行的问卷调查",  
       "edit_status": 1,
       "reward": 1,
@@ -255,12 +257,12 @@
     ```json
     {
 	    "qid":1, //问卷编号
-	    "sid":"16340209",
-      "title": "中山大学睡眠情况调查",
+	    "title": "中山大学睡眠情况调查",
       "description":"这是一份对中大学生进行的问卷调查",  
       "edit_status": 1,
       "reward": 1,
       "quantity": 100,
+      "pub_time":"2019-05-12", 
       "content":[
             {
                 "choice_type":1,
@@ -316,7 +318,7 @@
 - body (*required*) 
   ```json
     {
-    qid:1 //删除对应问卷编号的问卷
+    "qid":1 //删除对应问卷编号的问卷
     } 
   ```
 #### Responses
@@ -352,7 +354,7 @@
             "description":"问卷调查",
             "reward":2,
             "quantity":300,
-            "status":1
+            "edit_status":1
         },
         {
             "qid":1235,
@@ -360,7 +362,7 @@
             "description":"问卷调查",
             "reward":2,
             "quantity":300,
-            "status":1
+            "edit_status":1
         },
         {
             "qid":1236,
@@ -368,68 +370,71 @@
             "description":"问卷调查",
             "reward":2,
             "quantity":300,
-            "status":1
+            "edit_status":1
         }
     ]
 }
 ```
 
-### GET `/user/wenjuan/{wenjuan_id}` 请求具体问卷
+### GET `/user/questionnaire/{qid}` 请求具体一份问卷
 
 #### Parameters
 ```json
     {
-    "wenjuan_id":1
+    "qid":1
     } 
 ```
 
 #### Responses
+
 ```json
-    {
-    "qid":3,
-    "sid":"16340209",
-    "title":"中大学生调查问卷1",
-    "description":"中大学生调查问卷1",
-    "edit_status":1,
-    "quantity":200,
-    "reward":0.5,
-    "pub_time":"2019-05-12",
-    "content":[
-        {
-            "choice_type":1,
-            "question":"您每晚几点睡",
-            "choice_item":[
-                "8点",
-                "9点",
-                "10点"
-            ],
-            "must_edit":1
-        },
-        {
-            "choice_type":1,
-            "question":"您睡前看书吗",
-            "choice_item":[
-                "看",
-                "不看"
-            ],
-            "must_edit":1
-        },
-        {
-            "choice_type":1,
-            "question":"您睡前习惯先喝一杯水吗",
-            "choice_item":[
-                "习惯",
-                "不习惯"
-            ],
-            "must_edit":1
-        }
-    ]
-} 
+{
+	"code":200, // 操作状态码
+    "msg":"successful", //返回信息
+    "content":{
+        "qid":3,
+        "sid":"16340209",
+        "title":"中大学生调查问卷1",
+        "description":"中大学生调查问卷1",
+        "edit_status":1,
+        "quantity":200,
+        "reward":0.5,
+        "pub_time":"2019-05-12",
+        "content":[
+            {
+                "choice_type":1,
+                "question":"您每晚几点睡",
+                "choice_item":[
+                    "8点",
+                    "9点",
+                    "10点"
+                ],
+                "must_edit":1
+            },
+            {
+                "choice_type":1,
+                "question":"您睡前看书吗",
+                "choice_item":[
+                    "看",
+                    "不看"
+                ],
+                "must_edit":1
+            },
+            {
+                "choice_type":1,
+                "question":"您睡前习惯先喝一杯水吗",
+                "choice_item":[
+                    "习惯",
+                    "不习惯"
+                ],
+                "must_edit":1
+            }
+        ]
+	} 
+}
 ```
 
-### GET `/user/questionnaire_pre`
-
-### **从当前偏移量开始，获取接下去n个数据库问卷，用户已经填写的不传，未发布的问卷不传**
+### GET `/user/questionnaire_pre`从当前偏移量开始，获取接下去n个数据库问卷，用户已经填写的不传，未发布的问卷不传
 
 #### Parameters
 
@@ -501,9 +506,7 @@
     {
     "ID":1, //问卷id
     "sid":"16340007", //答卷人学号
-    "ID":1, //问卷id
     "ans_time":"2019-05-12", //时间
-    "verify":1, //未审核0，审核通过1，审核不通过2
     "content":[["hahs","shcas"],["suuw"],["hcshihoiw"]]
     } 
 ```
@@ -563,7 +566,7 @@
    {
     "code":200,
     "msg":"successful",
-    "data":[
+    "content":[
         {
             "sid":"16340209",
             "ans_time":"2015-05-11",
@@ -612,7 +615,7 @@
    {
     "code":200,
     "msg":"successful",
-    "data":
+    "content":
         {
             "sid":"16340209",
             "ans_time":"2015-05-11",
