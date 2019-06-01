@@ -83,7 +83,7 @@
         "sex":"男",
         "phone_num":"15213554491",
 	"email":"1933611219@qq.com",
-    	"Credibility":100,
+	"Credibility":100,
         "balance":100
     }  
     ```
@@ -108,7 +108,7 @@
       "age": 22,
       "sex": 1,
       "grade": 2,
-      "major": "工程"，
+      "major": "工程",
       "email":"1933611219@qq.com"
     }    
     ```
