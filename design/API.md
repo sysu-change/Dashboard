@@ -39,6 +39,7 @@
       "grade": "3",
       "major": "工程",
       "phone_num": "13991153616",
+      "email":"1933611219@qq.com",
       "password": "123456"
     }    
     ```
@@ -81,6 +82,8 @@
         "grade":"大三",
         "sex":"男",
         "phone_num":"15213554491",
+	"email":"1933611219@qq.com",
+    	"Credibility":100,
         "balance":100
     }  
     ```
@@ -105,7 +108,8 @@
       "age": 22,
       "sex": 1,
       "grade": 2,
-      "major": "工程"
+      "major": "工程"，
+      "email":"1933611219@qq.com"
     }    
     ```
   - parameter content type: `application/json`
