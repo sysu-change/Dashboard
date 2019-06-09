@@ -6,9 +6,7 @@
 
 ## 关系模型
 
-## 数据库物理模型
-
-- account-存储账号
+- account-账号
 
     | Field     | Type        | Key  | Description                                                  |
     | --------- | ----------- | ---- | ------------------------------------------------------------ |
@@ -22,52 +20,64 @@
     | password  | VARCHAR(20) |      | 密码，不少于6位，不能为NULL                                  |
     | balance   | INT         |      | 账户余额，不能为NULL，默认值为0                              |
     
+- questionable-问卷表
 
-- questionnaire-存储问卷表的元数据
+    | Field       | Type          | Key  | Description                                                  |
+    | ----------- | ------------- | ---- | ------------------------------------------------------------ |
+    | qid         | INT           | PRI  | 问卷id号                                                     |
+    | sid         | VARCHAR(8)    |      | 问卷发布者学号                                               |
+    | title       | VARCHAR(5000) |      | 问卷标题，不能为NULL                                         |
+    | description | VARCHAR(5000) |      | 问卷描述，默认为空                                           |
+    | edit_status | INT           |      | 编辑状态，0:未编辑完全，1：正在审核或发布中，2：已发布，默认为0 |
+    | quantity    | INT           |      | 回收的问卷总数，不能为NULL                                   |
+    | reward      | FLOAT         |      | 回答问卷的赏金，不能为NULL                                   |
+    | pub_time    | DATETIME      |      | 发布时间，默认值为NULL，当为NULL的时候表示还没有发布         |
+    | content     | VARCHAR(5000) |      | 问卷内容，json格式                                           |
 
-    | Field       | Type         | Key                                | Description                                                  |
-    | ----------- | ------------ | ---------------------------------- | ------------------------------------------------------------ |
-    | qid         | INT          | PRI                                | 问卷id号，作为主键                                           |
-    | sid         | VARCHAR(8)   | FOREIGN KEY REFERENCES account.sid | 发布问卷的账户sid，不能为NULL                                |
-    | titile      | VARCHAR(100) |                                    | 问卷标题，不能为NULL                                         |
-    | description | VARCHAR(200) |                                    | 问卷描述，默认为空                                           |
-    | edit_status | INT          |                                    | 编辑状态，0:未编辑完全，1：正在审核或发布中，2：已发布，默认为0 |
-    | pub_time    | DATETIME     |                                    | 发布时间，默认值为NULL，当为NULL的时候表示还没有发布         |
-    | quantity    | INT          |                                    | 回收的问卷总数，不能为NULL                                   |
-    | reward      | FLOAT        |                                    | 回答问卷的赏金，不能为NULL                                   |
+- answertable-答卷表
 
-- que_item-存储问卷表中的问题
+    | Field    | Type          | Key                                            | Description                                                |
+    | -------- | ------------- | ---------------------------------------------- | ---------------------------------------------------------- |
+    | qid      | INT           | PRI && FOREIGN KEY REFERENCES questionable.qid | 问卷id号                                                   |
+    | sid      | VARCHAR(8)    | PRI && FOREIGN KEY REFERENCES accounts.sid     | 问卷填写人学号                                             |
+    | ans_time | DATETIME      |                                                | 提交答卷时间，不能为NULL                                   |
+    | verify   | INT           |                                                | 审核状态，0表示未审核，1表示审核通过，2表示未通过(默认为0) |
+    | content  | VARCHAR(5000) |                                                | 答卷内容，json格式                                         |
 
-    | Field       | Type         | Key                                             | Description                                                 |
-    | ----------- | ------------ | ----------------------------------------------- | ----------------------------------------------------------- |
-    | qid         | INT          | PRI && FOREIGN KEY REFERENCES questionnaire.qid | 问卷id号，作为主键对之一                                    |
-    | i_index     | INT          | PRI                                             | 问题序号，作为主键对之一                                    |
-    | i_type      | INT          |                                                 | 问题类型，暂定0表示单选，1表示多选，2表示文本题，不能为NULL |
-    | description | VARCHAR(100) |                                                 | 问题的描述，不能为NULL                                      |
+- task-任务
 
-- que_option-存储问卷表问题中的选项
+    | Field       | Type          | Key                                 | Description                                                  |
+    | ----------- | ------------- | ----------------------------------- | ------------------------------------------------------------ |
+    | tid         | INT           | PRI                                 | 任务id                                                       |
+    | sid         | VARCHAR(8)    | FOREIGN KEY REFERENCES accounts.sid | 任务发布者学号                                               |
+    | type        | INT           |                                     | 任务类型，1：问卷任务 2：取快递业务 3：运动业务 4：学习业务 5：求夸业务 6：其他业务 |
+    | description | VARCHAR(5000) |                                     | 任务描述                                                     |
+    | detail      | VARCHAR(5000) |                                     | 任务详情                                                     |
+    | deadline    | DATETIME      |                                     | 截止时间                                                     |
+    | phone_num   | VARCHAR(11)   |                                     | 任务发布者手机号                                             |
+    | wechat      | VARCHAR(30)   |                                     | 任务发布者微信号                                             |
+    | quantity    | INT           |                                     | 任务需求数量                                                 |
+    | reward      | FLOAT         |                                     | 任务赏金                                                     |
 
-    | Field       | Type         | Key                                                          | Description                               |
-    | ----------- | ------------ | ------------------------------------------------------------ | ----------------------------------------- |
-    | qid         | INT          | PRI && 和i_num一起 FOREIGN KEY REFERENCES que_item.qid, que_item.i_index | 问卷id号，作为主键对之一                  |
-    | i_index     | INT          | PRI && 和did一起 FOREIGN KEY REFERENCES que_item.qid, que_item.i_index | 问题序号，作为主键对之一                  |
-    | o_num       | INT          | PRI                                                          | 选项序号，作为主键对之一（文字题时作为1） |
-    | description | VARCHAR(100) |                                                              | 选项的描述，默认为空                      |
+- task_order-任务接单
 
-- que_answer-存储问卷表的回答元数据
+    | Field         | Type       | Key                                        | Description                                           |
+    | ------------- | ---------- | ------------------------------------------ | ----------------------------------------------------- |
+    | tid           | INT        | PRI && FOREIGN KEY REFERENCES task.tid     | 任务id                                                |
+    | sid           | VARCHAR(8) | PRI && FOREIGN KEY REFERENCES accounts.sid | 任务接单者学号                                        |
+    | accept_status | INT        |                                            | 接单状态，0表示进行中，1表示已完成                    |
+    | verify        | INT        |                                            | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
+    | reward_status | INT        |                                            | 赏金是否到账，0为没有到账，1为已到账                  |
 
-    | Field  | Type       | Key                                             | Description                                                |
-    | ------ | ---------- | ----------------------------------------------- | ---------------------------------------------------------- |
-    | qid    | INT        | PRI && FOREIGN KEY REFERENCES questionnaire.qid | 问卷id号，作为主键对之一                                   |
-    | sid    | VARCHAR(8) | PRI && FOREIGN KEY REFERENCES account.sid       | 回答问卷的账户的sid，作为主键对之一                        |
-    | verify | INT        |                                                 | 审核状态，0表示未审核，1表示审核通过，2表示未通过(默认为0) |
+- complant-投诉
 
-- que_answer_option-存储问卷表的回答的详细内容（选项）
+    | Field           | Type          | Key                                        | Description                                           |
+    | --------------- | ------------- | ------------------------------------------ | ----------------------------------------------------- |
+    | tid             | INT           | PRI && FOREIGN KEY REFERENCES task.tid     | 任务id                                                |
+    | complainant_sid | VARCHAR(8)    | PRI && FOREIGN KEY REFERENCES accounts.sid | 投诉者学号                                            |
+    | defendant_sid   | VARCHAR(8)    | PRI && FOREIGN KEY REFERENCES accounts.sid | 接单状态，0表示进行中，1表示已完成                    |
+    | reason          | VARCHAR(5000) |                                            | 原因                                                  |
+    | photo           | BLOB          |                                            | 图片证据                                              |
+    | verify          | INT           |                                            | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
 
-    | Field       | Type         | Key                                                          | Description                                       |
-    | ----------- | ------------ | ------------------------------------------------------------ | ------------------------------------------------- |
-    | qid         | INT          | PRI && 和sid一起 FOREIGN KEY REFERENCES que_answer.qid, que_answer.sid | 问卷id号，作为主键对之一                          |
-    | sid         | VARCHAR(8)   | PRI && 和qid一起 FOREIGN KEY REFERENCES que_answer.qid, que_answer.sid | 回答问卷的账户的sid，作为主键对之一               |
-    | i_index     | INT          | PRI                                                          | 问题序号，作为主键对之一                          |
-    | o_num       | INT          | PRI                                                          | 选择的选项序号，作为主键对之一（文字题时设为为1） |
-    | word_answer | VARCHAR(100) |                                                              | 文字题的回答，默认为空                            |
+## 数据库物理模型
