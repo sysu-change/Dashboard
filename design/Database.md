@@ -58,6 +58,7 @@
     | wechat      | VARCHAR(30)   |                                     | 任务发布者微信号                                             |
     | quantity    | INT           |                                     | 任务需求数量                                                 |
     | reward      | FLOAT         |                                     | 任务赏金                                                     |
+    | status      | INT           |                                     | 表示任务进行和完成状态                                       |
 
 - task_order-任务接单
 
@@ -71,13 +72,14 @@
 
 - complant-投诉
 
-    | Field           | Type          | Key                                        | Description                                           |
-    | --------------- | ------------- | ------------------------------------------ | ----------------------------------------------------- |
-    | tid             | INT           | PRI && FOREIGN KEY REFERENCES task.tid     | 任务id                                                |
-    | complainant_sid | VARCHAR(8)    | PRI && FOREIGN KEY REFERENCES accounts.sid | 投诉者学号                                            |
-    | defendant_sid   | VARCHAR(8)    | PRI && FOREIGN KEY REFERENCES accounts.sid | 接单状态，0表示进行中，1表示已完成                    |
-    | reason          | VARCHAR(5000) |                                            | 原因                                                  |
-    | photo           | BLOB          |                                            | 图片证据                                              |
-    | verify          | INT           |                                            | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
+    | Field           | Type          | Key                                 | Description                                           |
+    | --------------- | ------------- | ----------------------------------- | ----------------------------------------------------- |
+    | Cid             | INT           | PRI                                 | 投诉单id                                              |
+    | tid             | INT           | FOREIGN KEY REFERENCES task.tid     | 任务id                                                |
+    | complainant_sid | VARCHAR(8)    | FOREIGN KEY REFERENCES accounts.sid | 投诉者学号                                            |
+    | defendant_sid   | VARCHAR(8)    | FOREIGN KEY REFERENCES accounts.sid | 接单状态，0表示进行中，1表示已完成                    |
+    | reason          | VARCHAR(5000) |                                     | 原因                                                  |
+    | photo           | BLOB          |                                     | 图片证据                                              |
+    | verify          | INT           |                                     | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
 
 ## 数据库物理模型
