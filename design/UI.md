@@ -74,7 +74,7 @@
 
 #### 整体布局
 
-![image](image13.png)
+![image](image14.png)
 
 #### 学生端选择问卷页面
 
