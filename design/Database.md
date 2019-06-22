@@ -2,7 +2,7 @@
 
 ## ER模型
 
-![Database1](/Users/aodacat/Desktop/学习/大三/系统分析与设计/大作业/Dashboard/design/Database1.png)
+![Database1](Database1.png)
 
 ## 逻辑模型
 
