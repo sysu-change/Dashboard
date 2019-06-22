@@ -2,26 +2,33 @@
 
 ### 概况
 
-REST API 是一系列个体可描述 (individually-addressable) 的资源（API的名词）的模型
-资源可以通过他们的资源名称来提及，并可以通过一个小集合内的方法（即API的动词）来操作
+REST -- REpresentational State Transfer，英语的直译就是“表现层状态转移”，直白的解释是：用URL定位资源，用HTTP动词（GET,POST,PUT,DELETE)描述操作
 
-**建议按照下列步骤来设计面向资源的API**
+resource：资源，即数据
+Representational：某种表现形式，比如用JSON，XML，JPEG等
+State Transfer：状态变化。通过HTTP动词实现
 
-1.确定API提供的资源类型
+RESTful API就是REST风格的API，是一套协议来规范多种形式的前端和同一个后台的交互方式。由后台也就是SERVER来提供前端来调用。前端调用API向后台发起HTTP请求，后台响应请求将处理结果反馈给前端。也就是说RESTful 是典型的基于HTTP的协议
 
-2.查明不同资源间的关系
+### 1.资源
 
-3.根据资源的类型和关系，决定资源名称的规范
+资源就是网络上的一个实体，一段文本，一张图片或者一首歌曲。资源总是要通过一种载体来反应它的内容。文本可以用TXT，也可以用HTML或者XML、图片可以用JPG格式或者PNG格式，JSON是现在最常用的资源表现形式。在本项目中，资源统一使用JSON
 
-4.决定资源的范式 (schema)
+### 2.统一接口
 
-5.为资源加上方法的最小集合
+RESTful风格的数据元操CRUD（create,read,update,delete）分别对应HTTP方法：GET用来获取资源，POST用来新建资源（也可以用于更新资源），PUT用来更新资源，DELETE用来删除资源，这样就统一了数据操作的接口
 
-### 1. 协议
+### 3.URI
+
+可以用一个URI（统一资源定位符）指向资源，即每个URI都对应一个特定的资源。要获取这个资源访问它的URI就可以，因此URI就成了每一个资源的地址或识别符。一般的，每个资源至少有一个URI与之对应，最典型的URI就是URL
+
+本项目中，URI使用URL
+
+### 4. 协议
 
 API与用户的通信协议，总是使用HTTPs协议。
 
-### 2. 域名
+### 5. 域名
 
 应该尽量将API部署在专用域名之下。
 
@@ -29,17 +36,9 @@ API与用户的通信协议，总是使用HTTPs协议。
 
 如果确定API很简单，不会有进一步扩展，可以考虑放在主域名下。
 
-`https://example.org/api/`
+`https://example.org/api/
 
-### 3. 版本
-
-应该将API的版本号放入URL。
-
-`https://api.example.com/v1/`
-
-另一种做法是，将版本号放在HTTP头信息中，但不如放入URL方便和直观。Github采用这种做法。
-
-### 4. 路径
+### 6. 路径
 
 路径又称"终点"（endpoint），表示API的具体网址。
 
@@ -61,7 +60,7 @@ API与用户的通信协议，总是使用HTTPs协议。
 `/createNewAnimals`
 `/deleteAllEmployees`
 
-### 5. HTTP动词
+### 6. HTTP动词
 
 对于资源的具体操作类型，由HTTP动词表示
 
@@ -105,7 +104,7 @@ API与用户的通信协议，总是使用HTTPs协议。
 
 `GET /users/711/activate`
 
-### 6.过滤、排序、选择、分页
+### 7.过滤、排序、选择、分页
 
 **过滤**
 
@@ -159,7 +158,7 @@ Link:
 
 <https://api.github.com/user/repos?page=50&per_page=100>; rel="last"
 
-### 7. 状态码
+### 8. 状态码
 
 服务器向用户返回的状态码和提示信息，常见的有以下一些（方括号中是该状态码对应的HTTP动词）：
 
@@ -185,7 +184,7 @@ Link:
 
 **更新和创建操作应该返回对应的状态码，防止用户多次的API调用。**
 
-### 8. 错误处理
+### 9. 错误处理
 
 如果状态码是4xx，就应该向用户返回出错信息。一般来说，返回的信息中将error作为键名，出错信息作为键值即可。
 使用详细的错误包装错误：
@@ -203,7 +202,7 @@ Link:
 }
 ```
 
-### 9. 返回结果
+### 10.返回结果
 
 针对不同操作，服务器向用户返回的结果应该符合以下规范。
 
@@ -219,32 +218,7 @@ Link:
 
 `DELETE /collection/resource`：返回一个空文档
 
-### 10. Hypermedia API
-
-RESTful API最好做到Hypermedia，即返回结果中提供链接，连向其他API方法，使得用户不查文档，也知道下一步应该做什么
-
-比如，当用户向api.example.com的根目录发出请求，会得到这样一个文档
-
-```json
-{"link":{
-  "rel":  "collection https://www.example.com/zoos",
-  "href": "https://api.example.com/zoos",
-  "title":"List of zoos",
-  "type": "application/vnd.yourformat+json"
-}}
-```
-
-上面代码表示，文档中有一个link属性，用户读取这个属性就知道下一步该调用什么API了
-
-rel表示这个API与当前网址的关系（collection关系，并给出该collection的网址），href表示API的路径，title表示API的标题，type表示返回类型
-
-### 11. 如果一个资源与另外一个资源有关系，使用子资源
-
-`GET /cars/711/drivers/` 返回 car 711的所有司机
-
-`GET /cars/711/drivers/4` 返回 car 711的4号司机
-
-### 12. 使用Http头声明序列化格式
+### 11. 使用Http头声明序列化格式
 
 在客户端和服务端，双方都要知道通讯的格式，格式在HTTP-Header中指定
 
@@ -252,7 +226,7 @@ rel表示这个API与当前网址的关系（collection关系，并给出该coll
 
 `Accept` 定义系列可接受的响应格式
 
-### 13. 基于验证的缓存
+### 12. 基于验证的缓存
 
 **不要在服务端存储应用状态**
 
@@ -268,9 +242,11 @@ RESTful HTTP的交互必须是无状态的，这表明每一次请求要包含�
 
 如果不方便，可以使用OAuth 2来进行token的安全传输
 
-### 14.其他
+### 13.其他
 
-（1）**应该尽量使用JSON**，避免使用`XML`
+（1）使用JSON进行数据传递
 
 （2）使用蛇形命令（下划线和小写）
+
+（3）URL不能使用大写字母
 

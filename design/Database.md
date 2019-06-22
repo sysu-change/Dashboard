@@ -2,9 +2,9 @@
 
 ## ER模型
 
-![Database1](Database1.png)
+![Database1](/Users/aodacat/Desktop/学习/大三/系统分析与设计/大作业/Dashboard/design/Database1.png)
 
-## 关系模型
+## 逻辑模型
 
 - account-账号
 
@@ -26,8 +26,8 @@
     | ----------- | ------------- | ---- | ------------------------------------------------------------ |
     | qid         | INT           | PRI  | 问卷id号                                                     |
     | sid         | VARCHAR(8)    |      | 问卷发布者学号                                               |
-    | title       | VARCHAR(5000) |      | 问卷标题，不能为NULL                                         |
-    | description | VARCHAR(5000) |      | 问卷描述，默认为空                                           |
+    | title       | VARCHAR(100)  |      | 问卷标题，不能为NULL                                         |
+    | description | VARCHAR(200)  |      | 问卷描述，默认为空                                           |
     | edit_status | INT           |      | 编辑状态，0:未编辑完全，1：正在审核或发布中，2：已发布，默认为0 |
     | quantity    | INT           |      | 回收的问卷总数，不能为NULL                                   |
     | reward      | FLOAT         |      | 回答问卷的赏金，不能为NULL                                   |
@@ -70,16 +70,20 @@
     | verify        | INT        |                                            | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
     | reward_status | INT        |                                            | 赏金是否到账，0为没有到账，1为已到账                  |
 
-- complant-投诉
+- comp_order-投诉单
 
     | Field           | Type          | Key                                 | Description                                           |
     | --------------- | ------------- | ----------------------------------- | ----------------------------------------------------- |
-    | Cid             | INT           | PRI                                 | 投诉单id                                              |
+    | cid             | INT           | PRI                                 | 投诉单id                                              |
     | tid             | INT           | FOREIGN KEY REFERENCES task.tid     | 任务id                                                |
     | complainant_sid | VARCHAR(8)    | FOREIGN KEY REFERENCES accounts.sid | 投诉者学号                                            |
     | defendant_sid   | VARCHAR(8)    | FOREIGN KEY REFERENCES accounts.sid | 接单状态，0表示进行中，1表示已完成                    |
-    | reason          | VARCHAR(5000) |                                     | 原因                                                  |
-    | photo           | BLOB          |                                     | 图片证据                                              |
+    | reason          | VARCHAR(3000) |                                     | 投诉原因                                              |
     | verify          | INT           |                                     | 审核状态，0表示未审核，1表示审核通过，2表示审核未通过 |
 
-## 数据库物理模型
+- img-投诉单的图片
+
+    | Field    | Type       | Key                                          | Description          |
+    | -------- | ---------- | -------------------------------------------- | -------------------- |
+    | cid      | INT        | PRI && FOREIGN KEY REFERENCES comp_order.cid | 投诉单id             |
+    | img_data | MEDIUMTEXT |                                              | 图片数据(base64格式) |
