@@ -63,8 +63,9 @@
     
 #### 注册   
 
+![image3](image3.png)
 
-      
+![image3](image3-1.png)
 
 ## 第1轮迭代
 ### 工具：xiaopiu
@@ -83,19 +84,16 @@
 
 #### 具体问卷页面
 
-![image5](image5.png)
+![image5](image17.png)
 
 #### 奶牛端问卷页面
 
-![image6](image6.png)
+![image6](image17.png)
 
-#### 问卷发布页面
-
-![image7](image7.png)
 
 #### 问卷编辑页面
 
-![image8](image8.png)
+![image8](image18.png)
 
 #### 充值页面
 
