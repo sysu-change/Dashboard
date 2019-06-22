@@ -107,13 +107,10 @@
 
 ![image11](image11.png)
 
-#### 某问卷答案细节页面
-
-![image12](image12.png)
 
 #### 某问卷奶牛端查看页面
 
-![image13](image13.png)
+![image13](image20.png)
 
 ## 第2轮迭代
 ### 工具：xiaopiu
