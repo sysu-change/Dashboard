@@ -86,9 +86,9 @@
 
 ![image5](image17.png)
 
-#### 奶牛端问卷页面
+#### 奶牛端查所有发布/未发布问卷页面
 
-![image6](image17.png)
+![image6](image6.png)
 
 
 #### 问卷编辑页面
@@ -108,9 +108,9 @@
 ![image11](image11.png)
 
 
-#### 某问卷奶牛端查看页面
+#### 某问卷作答情况查看页面
 
-![image13](image20.png)
+![image13](image21.png)
 
 ## 第2轮迭代
 ### 工具：xiaopiu
