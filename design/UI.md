@@ -112,6 +112,10 @@
 
 ![image13](image21.png)
 
+![image13](image22.png)
+
+![image13](image23.png)
+
 ## 第2轮迭代
 ### 工具：xiaopiu
 
@@ -119,16 +123,32 @@
 
 ### 任务/投诉系统
 #### 学生端查看可接受任务页面
+ 
+![image](image24.png)
 
-#### “我的任务” 已完成/正在进行
+#### “我的任务” 已完成
+
+![image](image26.png)
+
+#### “我的任务”正在进行
+
+![image](image25.png)
 
 #### 奶牛端查看已接收但未提交审核的任务
 
+![image](image27.png)
+
 #### 奶牛端查看已经提交完成的待审核任务
+
+![image](image28.png)
 
 #### 奶牛创建新任务
 
+![image](image29.png)
+
 #### 学生/奶牛投诉相关任务
+
+![image](image30.png)
 
 ### 管理员系统
 #### 查看所有提交的投诉单
