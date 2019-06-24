@@ -50,22 +50,22 @@
 
 #### 首页
 
-![image1](image1.png)
+![image1](images/image1.png)
      
 
 
 #### 登录
 
-![image2](image2.png)
+![image2](images/image2.png)
      
     
     
     
 #### 注册   
 
-![image3](image3.png)
+![image3](images/image3.png)
 
-![image3](image3-1.png)
+![image3](images/image3-1.png)
 
 ## 第1轮迭代
 ### 工具：xiaopiu
@@ -75,46 +75,46 @@
 
 #### 整体布局
 
-![image](image14.png)
+![image](images/image14.png)
 
 #### 学生端选择问卷页面
 
-![image](image16.png)
+![image](images/mage16.png)
 
 
 #### 具体问卷页面
 
-![image5](image17.png)
+![image5](images/image17.png)
 
 #### 奶牛端查所有发布/未发布问卷页面
 
-![image6](image6.png)
+![image6](images/image6.png)
 
 
 #### 问卷编辑页面
 
-![image8](image18.png)
+![image8](images/image18.png)
 
 #### 充值页面
 
-![image9](image8.png)
+![image9](images/image8.png)
 
 #### 提现页面
 
-![image10](image9.png)
+![image10](images/image9.png)
 
 #### 个人信息页面
 
-![image11](image11.png)
+![image11](images/image11.png)
 
 
 #### 某问卷作答情况查看页面
 
-![image13](image21.png)
+![image13](images/image21.png)
 
-![image13](image22.png)
+![image13](images/image22.png)
 
-![image13](image23.png)
+![image13](images/image23.png)
 
 ## 第2轮迭代
 ### 工具：xiaopiu
@@ -125,33 +125,33 @@
 ### 任务/投诉系统
 #### 学生端查看可接受任务页面
  
-![image](image24.png)
+![image](images/image24.png)
 
 #### “我的任务” 已完成
 
-![image](image26.png)
+![image](images/image26.png)
 
 #### “我的任务”正在进行
 
-![image](image25.png)
+![image](images/image25.png)
 
 #### 奶牛端查看已接收但未提交审核的任务
 
-![image](image27.png)
+![image](images/image27.png)
 
 #### 奶牛端查看已经提交完成的待审核任务
 
-![image](image28-1.png)
+![image](images/image28-1.png)
 
-![image](image28.png)
+![image](images/image28.png)
 
 #### 奶牛创建新任务
 
-![image](image29.png)
+![image](images/image29.png)
 
 #### 学生/奶牛投诉相关任务
 
-![image](image30.png)
+![image](images/image30.png)
  
 
 ### 管理员系统
