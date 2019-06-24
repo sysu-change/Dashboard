@@ -186,6 +186,38 @@
     } 
    ```
 
+### POST `/user/sent_verify` 发送邮箱验证码
+
+#### Parameters
+
+- body (*required*) 顾客信息
+
+  - example value
+
+    ```json
+    {
+      "email":"1933611219@qq.com"
+    }    
+    ```
+
+  - parameter content type: `application/json`
+
+#### Responses
+
+- 200, OK 
+
+- 400, failed
+
+- 示例：
+
+  ```json
+  {
+      "code":200,
+      "msg":"successful",
+      "verify_code":"RVjH"
+  }
+  ```
+
 
 
 ## 问卷接口
@@ -438,9 +470,11 @@
 }
 ```
 
-### GET `/user/questionnaire_pre`从当前偏移量开始，获取接下去n个数据库问卷，用户已经填写的不传，未发布的问卷不传
+### GET `/user/questionnaire_pre/?offset={value}&number={value}`
 
-#### Parameters
+### 从当前偏移量开始，获取接下去n个数据库问卷，用户已经填写的不传，未发布的问卷不传
+
+#### GET Parameters
 
 ```json
     {
@@ -516,15 +550,15 @@
 ```
 #### Responses
 
-- 200, OK (服务器接受并存储了该问卷答案：)
-- 400, Bad Request (问卷已达上限、服务器出错、问卷已被下架等)
+- 200, OK
+- 400, Bad Request 
 - 示例：
 
 ```json
    {
     "code":200,
     "msg":"successful"
-}
+   }
 ```
 
 ### PUT `/user/answer_review` 答卷审核
@@ -539,12 +573,12 @@
 ```
 #### Responses
 
-- 200, OK (服务器接受并存储了该问卷答案：)
-- 400, Bad Request (问卷已达上限、服务器出错、问卷已被下架等)
+- 200, OK
+- 400, Bad Request 
 - 示例：
 
 ```json
-   {
+{
     "code":200,
     "msg":"successful"
 }
@@ -552,9 +586,9 @@
 
 
 
-### GET `/user/answer_get` 获取所有答卷
+### GET `/user/answer_get/{qid}` 获取所有答卷
 
-#### Parameters
+#### GET Parameters
 ```json
     {
     "qid":1234 //问卷id
@@ -562,8 +596,8 @@
 ```
 #### Responses
 
-- 200, OK (服务器接受并存储了该问卷答案)
-- 400, Bad Request (问卷已达上限、服务器出错、问卷已被下架等)
+- 200, OK 
+- 400, Bad Request
 - 示例：
 
 ```json
@@ -599,9 +633,11 @@
     ]
 }
 ```
-### GET `/user/get_sid_answer` 查看一份具体的答卷
+### GET `/user/get_sid_answer?qid={value}&sid={value}` 
 
-#### Parameters
+### 查看一份具体的答卷
+
+#### GET Parameters
 ```json
     {
     "qid":1234, //问卷id
@@ -610,13 +646,13 @@
 ```
 #### Responses
 
-- 200, OK (服务器接受并存储了该问卷答案)
+- 200, OK
 
-- 400, Bad Request (问卷已达上限、服务器出错、问卷已被下架等)
+- 400, Bad Request 
 
 - 示例：
 ```json
-   {
+{
     "code":200,
     "msg":"successful",
     "content":
@@ -628,3 +664,617 @@
         }
 }
 ```
+
+
+
+## 其他任务接口
+
+### 奶牛端部分接口
+
+### POST `/user/create_task` 奶牛端创建发布任务
+
+**(后端做的时候添加status, int类型，0：初始值刚发布未完成 1：已完成)**
+
+#### Parameters
+
+```json
+   {
+    "type":2,
+    "description":"这是一份求帮拿快递任务",
+    "detail":"6月4号下午有没有人帮忙拿下快递",
+    "deadline":"2019-06-09",
+    "phone_num":"13719927319",
+    "wechat":"cxg723",
+    "quantity":1,
+    "reward":0.5
+}
+```
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request 
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### DELETE `/user/delete_task` 奶牛端删除任务
+
+#### Parameters
+
+```json
+{
+    "tid":2
+}
+```
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request 
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### GET `/user/provider_task_done` 奶牛端查看已完成的任务
+
+**（全部已审核通过的任务)**
+
+#### Parameters
+
+- no parameters
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful",
+    "number":3,
+    "content":[
+        {
+            "tid":1,
+            "type":2,
+            "reward":1.5，
+            "sid":"16340007",
+            "accept_status":1,
+            "verify":0
+        },
+        {
+            "tid":2,
+            "type":2,
+            "reward":1.5，
+            "sid":"16340209",
+            "accept_status":1,
+            "verify":1
+        },
+        {
+            "tid":3,
+            "type":2,
+            "reward":1.5，
+            "sid":"16340209",
+            "accept_status":1,
+            "verify":2
+        }
+    ]
+}
+```
+
+### GET `/user/provider_task_in_progress` **奶牛端查看正在进行中的任务**
+
+**（**任务未全部审核通过即正在进行**)**
+
+#### Parameters
+
+- no parameters
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful",
+    "number":3,
+    "content":[
+        {
+            "tid":1,
+            "type":2,
+            "deadline":"2019-06-12",
+            "reward":1.5,
+            "quantity":1,
+            "accept_num":1
+        },
+        {
+            "tid":1,
+            "type":3,
+            "deadline":"2019-06-12",
+            "reward":1.5,
+            "quantity":15,
+            "accept_num":3
+        },
+        {
+            "tid":1,
+            "type":2,
+            "deadline":"2019-06-12",
+            "quantity":1,
+            "accept_num":1
+        }
+    ]
+}
+```
+
+### GET `/user/contact_receiver/{sid}` 奶牛端联系接单者（获取接单者部分用户信息）
+
+#### Parameters
+
+```json
+sid: 16340007
+```
+
+#### Responses
+
+- 200, OK
+- 400, Bad Request 
+- 示例：
+
+```json
+{
+    "code": 200,
+    "msg":"successful",
+    content:{
+        "name": "蔡湘国",
+        "sid": "16340007",
+        "phone_num": "13719927319",
+        "email": "1933611219@qq.com"
+    }
+}
+```
+
+### PUT `/user/task_verify` 奶牛端审核任务(审核成功与否都将通过邮箱告知任务接受者)
+
+#### Parameters
+
+```json
+{
+	"tid":20,
+	"sid":"16340007",
+	"verify":1
+}
+```
+
+verify参数  0：未审核 1：审核通过 2：审核不通过
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### 学生端部分接口
+
+### POST `/user/apply` 学生端申请任务（需求量从数据库调用减1，发送邮件给发起者和接收者，申请接单接单状态accept_status=0）
+
+#### Parameters
+
+```json
+{
+	"tid":20
+}
+```
+
+verify参数  0：未审核 1：审核通过 2：审核不通过
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### POST `/user/task_finish` 学生端完成任务（更新接单状态accept_status=1，邮件通知任务发起者，提醒审核）
+
+#### Parameters
+
+```json
+{
+	"tid":20
+}
+```
+
+verify参数  0：未审核 1：审核通过 2：审核不通过
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### GET `/user/select_task?offset={value}&number={value}`
+
+### 学生端挑选任务，查看到目前系统所有的其他类型任务（要做分页）
+
+#### GET Parameters
+
+```json
+    {
+    "offset":1, //偏移量
+    "number":3 //请求数量
+    } 
+```
+
+#### Responses
+
+```json
+   {
+    "code":200,
+    "msg":"successful",
+    "number":3,
+    "content":[
+        {
+            "tid":1,
+            "type":2,
+            "description":"帮拿快递受到至二楼下",
+            "quantity":1,
+            "reward":2.2
+        },
+        {
+            "tid":2,
+            "type":2,
+            "description":"帮拿快递受到至三楼下",
+            "quantity":1,
+            "reward":2.2
+        },
+        {
+            "tid":3,
+            "type":2,
+            "description":"帮拿快递受到至四楼下",
+            "quantity":1,
+            "reward":2.2
+        }
+    ]
+}
+```
+
+### POST `/user/task_give_up` 学生端放弃任务（需求量回退一步,邮件告知任务发起者 ）
+
+#### Parameters
+
+```json
+{
+	"tid":20
+}
+```
+
+verify参数  0：未审核 1：审核通过 2：审核不通过
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### GET `/user/student_task_done` 学生端查看已完成的任务（
+
+（注意是学生端标记任务完成，而不是奶牛端整个任务结束，奶牛端在学生标记任务完成之后还要进行审核）
+
+#### Parameters
+
+- no parameters
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful",
+    "number":3,
+    "content":[
+        {
+            "tid":1,
+            "type":2,
+            "sid":"16340007",
+            "deadline":"2019-06-12",
+            "reward":1.5,
+            "reward_status":"是"
+        },
+        {
+            "tid":1,
+            "type":2,
+            "sid":"16340209",
+            "deadline":"2019-06-12",
+            "reward":1.5,
+            "reward_status":"是"
+        },
+        {
+            "tid":1,
+            "type":2,
+            "sid":"16340023",
+            "deadline":"2019-06-12",
+            "reward":1.5,
+            "reward_status":"是"
+        }
+    ]
+}
+```
+
+### GET `/user/student_task_in_progress` **学生端查看正在进行中的任务**
+
+**（**任务未全部审核通过即正在进行**)**
+
+#### Parameters
+
+- no parameters
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful",
+    "number":3,
+    "content":[
+        {
+            "tid":1,
+            "type":2,
+            "sid":"16340007",
+            "deadline":"2019-06-12",
+            "reward":1.5
+        },
+        {
+            "tid":2,
+            "type":2,
+            "sid":"16340017",
+            "deadline":"2019-06-12",
+            "reward":1.5
+        },
+        {
+            "tid":3,
+            "type":2,
+            "sid":"16340207",
+            "deadline":"2019-06-12",
+            "reward":1.5
+        }
+    ]
+}
+```
+
+### GET `/user/task/{id}` **奶牛端和学生端查看具体任务详情**
+
+#### Parameters
+
+- id: 1
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful",
+    "content":{
+        "tid":1,
+        "type":2,
+    	"description":"代取一份快递放到至二楼下宿管处",
+    	"detail":"本人由于不在学校需要找人帮忙拿下快递，放到楼下宿管阿姨处，快递编号和手机号码请联系本人，必须六点前取件，不能做到的不要接单",
+    	"deadline":"2019-06-12",
+        "phone_num":"13719927319",
+        "wechat":"cxg723"
+    }
+}
+```
+
+### 投诉相关接口
+
+### POST `/user/complaint` 奶牛端和学生端投诉，发送邮件告知被投诉者
+
+#### Parameters
+
+```json
+{
+	"tid":3,
+    "sid1":"16340207",
+    "sid2":"16340209",
+    "reason":"任务完成不符合要求"
+}
+```
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### POST `/picture/upload` 投诉图片上传（图片一张一张上传）
+
+#### Parameters
+
+```json
+{
+	"tid":24,
+	"sid1":"16340209",
+	"sid2":"16340007",
+	"photo":"data:image/png;base64,图片base64的转化编码"
+}
+```
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### GET `/user/get_complaint/{cid}` **获取具体的投诉单**
+
+#### Parameters
+
+- cid: 1
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code": 200,
+    "msg": "successful",
+    "tid": 24,
+    "sid1": "16340209",
+    "sid2": "16340007",
+    "reason": "用户态度非常不好！",
+    "number": 4,
+    "photo": [
+        {
+            "photo0": "data:image/png;base64,图片0的base64编码串"
+        },
+        {
+            "photo1": "data:image/png;base64,图片1的base64编码串"
+        },
+        {
+            "photo2": "data:image/png;base64,图片2的base64编码串"
+        },
+        {
+            "photo3": "data:image/png;base64,图片3的base64编码串"
+        }
+    ]
+}
+```
+
+### PUT `/user/complaint_handle` **审核某个投诉单**
+
+#### Parameters
+
+```json
+{
+    "cid":1,
+    "verify":1
+}
+```
+
+verify 参数 0:未审核 1：审核通过 2：审核不通过
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code":200,
+    "msg":"successful"
+}
+```
+
+### GET `/user/get_complaint/all` **获取所有未审核的投诉单信息（不包含图片）**
+
+#### Parameters
+
+- no parameters
+
+#### Responses
+
+- 200, OK 
+- 400, Bad Request
+- 示例：
+
+```json
+{
+    "code": 200,
+    "msg": "successful",
+    "number": 3,
+    "content": [
+        {
+            "cid": 1,
+            "tid": 24,
+            "sid1": "16340209",
+            "sid2": "16340399"
+        },
+        {
+            "cid": 2,
+            "tid": 19,
+            "sid1": "16340209",
+            "sid2": "16340399"
+        },
+        {
+            "cid": 3,
+            "tid": 24,
+            "sid1": "16340209",
+            "sid2": "16340287"
+        }
+    ]
+}
+```
+
+### 
