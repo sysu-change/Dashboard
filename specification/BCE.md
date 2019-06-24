@@ -34,7 +34,7 @@
 
 ### 项目用例简图
 
- ![image](images/use_case_BCE.png)
+ ![image](image/use_case_BCE.png)
  
 **2.2用例顺序图**
 
