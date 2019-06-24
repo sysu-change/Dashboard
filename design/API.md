@@ -749,7 +749,7 @@
         {
             "tid":1,
             "type":2,
-            "reward":1.5，
+            "reward":1.5,
             "sid":"16340007",
             "accept_status":1,
             "verify":0
@@ -757,7 +757,7 @@
         {
             "tid":2,
             "type":2,
-            "reward":1.5，
+            "reward":1.5,
             "sid":"16340209",
             "accept_status":1,
             "verify":1
@@ -765,7 +765,7 @@
         {
             "tid":3,
             "type":2,
-            "reward":1.5，
+            "reward":1.5,
             "sid":"16340209",
             "accept_status":1,
             "verify":2
@@ -839,7 +839,7 @@ sid: 16340007
 {
     "code": 200,
     "msg":"successful",
-    content:{
+    "content":{
         "name": "蔡湘国",
         "sid": "16340007",
         "phone_num": "13719927319",
