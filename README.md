@@ -15,8 +15,8 @@
     - 6.5 [System Sequence Diagram（功能模型）](Requirement/System_Sequence_Diagram.md)
     - 6.6 [Supplementary Requirements（补充需求）](Requirement/Supplementary_Requirements.md)
 7. Design（设计说明书）
-    - 7.1 [UI design（界面设计）](design/UI.md)
-        - 闲钱宝用例UI设计
+    - 7.1 UI design（界面设计）
+        - [闲钱宝用例UI设计](design/UI.md)
     - 7.2 [Database design（数据库设计）](design/Database.md)
         - 7.2.1 用户及权限系统数据库设计
         - 7.2.2 闲钱包子系统数据库设计
