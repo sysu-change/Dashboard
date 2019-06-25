@@ -1,6 +1,6 @@
 # 功能模型
 
-[详细用例](DashBoard/Requirement/Use_Cases.md)
+[详细用例](Requirement/Use_Cases.md)
 
 ## 功能模块
 
