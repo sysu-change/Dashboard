@@ -6,12 +6,12 @@
 
 #### 顺序图
 
-![](image/BCE_sdd1.png)
+![](images/BCE_sdd1.png)
 
-![](image/BCE_sdd2.png)
+![](images/BCE_sdd2.png)
 
 #### 类图
 
-![](image/class1.png)
+![](images/class1.png)
 
 
