@@ -10,7 +10,7 @@
 
     | Field     | Type        | Key  | Description                                                  |
     | --------- | ----------- | ---- | ------------------------------------------------------------ |
-    | sid       | VARCHAR(8)  | PRI  | 学号，作为主键                                               |
+| sid       | VARCHAR(8)  | PRI  | 学号，作为主键                                               |
     | name      | VARCHAR(16) |      | 姓名，不能为NULL                                             |
     | age       | INT         |      | 年龄                                                         |
     | sex       | VARCHAR(2)  |      | 性别，只能是’男‘或’女‘                                       |
