@@ -79,7 +79,7 @@
 
 #### 学生端选择问卷页面
 
-![image](images/mage16.png)
+![image](images/image16.png)
 
 
 #### 具体问卷页面
