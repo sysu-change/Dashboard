@@ -31,7 +31,7 @@
 
 - 申请任务
 
-![image](image/image4.png)
+![image](image/image4_2.png)
 
 - 查看任务
 
