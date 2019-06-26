@@ -41,7 +41,7 @@ X1. Meeting-Records
   - [Iteration 2 Meeting(19/06/06)](project/meeting2.md)
   - [Iteration 3 Meeting(19/06/21)](project/meeting3.md)
 
-X2. [KANBAN](https://github.com/orgs/sysu-change/projects)  
+X2. [KANBAN](https://github.com/sysu-change/Dashboard/projects?query=is%3Aclosed)  
 
 X3. [Auditing-Records](record_documents/auditing_records.md)
 
