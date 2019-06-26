@@ -27,7 +27,7 @@
 
 - 发布任务
 
-![image]![image](image/image3.png)
+![image](image/image3.png)
 
 - 申请任务
 
