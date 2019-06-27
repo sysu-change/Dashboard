@@ -3,7 +3,7 @@
 微云视频链接：https://share.weiyun.com/5EvzxD5 密码：072hjy
 
 [github视频](<https://github.com/sysu-change/Dashboard/blob/master/sysu-change.mp4>)
-
+[腾讯视频](<https://v.qq.com/x/page/s08907dbrz4.html>)
 ## 登录注册
 
 - 初始界面
