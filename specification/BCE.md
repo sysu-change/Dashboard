@@ -64,6 +64,7 @@
 ## 4.框架映射
 
 ### 前端目录结构
+前端总体上采用基于vue路由跳转的单页网页应用
 ```
 ├─ fontend
 | ├─ build
@@ -72,20 +73,45 @@
 | ├─ src
 | | ├─ assests //存放前端所需要的图片等静态文件
 | | ├─ components
-| | | ├─ Aut
+| | | ├─ Auth
 | | | | ├─ AccessAcount.vue //用户详细信息组件界面
 | | | | ├─ Register.vue //用户注册组件界面
 | | | | ├─ Signin.vue //用户登录组件界面
-| | | | ├─ 
-| | | ├─ Qus
+| | | | ├─ Signout.vue //用户登出组件
+| | | | └─ verify.vue //滑动验证码组件
+| | | ├─ Ques
+| | | | ├─ Check.vue //发布者查看问卷内容组件界面
+| | | | ├─ Create.vue //问卷创建组件界面
+| | | | ├─ Dajuan.vue //答卷具体内容界面
+| | | | ├─ Dajuanlist.vue //答卷列表界面
+| | | | ├─ Edit.vue //问卷编辑界面
+| | | | └─ Fillin.vue //问卷答题界面
+| | | ├─ Set
+| | | | ├─ Getjob.vue //获取问卷列表
+| | | | └─ Putjob.vue //发布问卷界面
 | | | ├─ User
+| | | | ├─ Complain.vue //用户投诉界面
+| | | | ├─ Recharge.vue //用户充值界面
+| | | | └─ Withdraw.vue //用户提现界面
 | | | ├─ Task
+| | | | ├─ CreateTask.vue //创建其他任务界面
+| | | | ├─ DoneTask.vue //用户发布且已完成任务列表界面
+| | | | ├─ GetTask.vue //用户获取其他任务列表界面
+| | | | ├─ myDoneTask.vue //个人用户已完成的任务列表界面
+| | | | ├─ myTodoTask.vue //个人申请的单还未完成的列表界面
+| | | | ├─ TaskDetail.vue //任务详情界面
+| | | | └─ TodoTask.vue //用户发布的单还未庸人完成任务
 | | | ├─ User.vue //用户登录进去后的主界面
+| | | └─ Hello.vue //欢迎界面
 | | ├─ router
-| | | ├─ index.js //vue路由文件
+| | | └─ index.js //vue路由文件
 | | ├─ storage //sessionstorage管理文件
+| | ├─ App.vue //vue的app主主组件，相当于组件树的根组件
+| | └─ main.js //引入必要的模块并将app.vue 组件应用到index.html中
+| ├─ static //静态文件库（暂时未用）
+| ├─ .postcssrc.js
 | ├─ index.html //vue前端项目入口文件
-| ├─ package.json //vue依赖文件，用于指明所需下载的依赖和前端打包
+| └─ package.json //vue依赖文件，用于指明所需下载的依赖和前端打包
 
 ```
 
