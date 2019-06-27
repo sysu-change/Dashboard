@@ -33,6 +33,7 @@
     - 8.4 [部署说明](specification/deploy.md)
 9. [测试](test/test.md)
 10. [成品展示](project/exhibitions.md)
+11. [用户使用手册](project/manual.md)
 
 
 
