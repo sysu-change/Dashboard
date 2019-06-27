@@ -33,6 +33,7 @@
     - 8.4 [部署说明](specification/deploy.md)
 9. [测试](test/test.md)
 10. [成品展示](project/exhibitions.md)
+11. [用户使用手册](project/manual.md)
 
 
 
@@ -54,15 +55,10 @@ X3. [Auditing-Records](record_documents/auditing_records.md)
 X4. Tech/Work Report  
 
 - [16340211 - wanggh8 - xxx(标题)](record_documents/16340211_tech1.md)
-
 - [16340210 - wangdchao - xxx(标题)](record_documents/16340210_tech1.md)
-
 - [16340209 - tang16340209 - 原型图设计与交互逻辑](https://blog.csdn.net/tangyt77/article/details/90701462)
-
 - [16340007 - Scott-Cai - xxx(标题)](record_documents/16340007_tech1.md)
-
-- [15331035 - Chenxr1997 - xxx(标题)](record_documents/15331035_tech1.md)
-
+- [15331035 - Chenxr1997 -git初学者指南](https://chenxr1997.github.io/2019/03/08/系分博客-git篇/)
 - [16341018 - ezlaor - xxx(标题)](record_documents/16341018_tech1.md)
 
 
