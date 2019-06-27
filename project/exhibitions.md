@@ -1,8 +1,8 @@
 # 成品展示
 
-视频链接：https://share.weiyun.com/5EvzxD5 密码：072hjy
+微云视频链接：https://share.weiyun.com/5EvzxD5 密码：072hjy
 
-[视频]()
+[github视频](<https://github.com/sysu-change/Dashboard/blob/master/sysu-change.mp4>)
 
 ## 登录注册
 
