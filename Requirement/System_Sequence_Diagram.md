@@ -33,7 +33,15 @@
 
 ![image](image/image4_2.png)
 
-- 查看任务(16341018 ezlaor)
+
+
++ 提交任务(16340210wangdchao)
+
+  ![3](assets/3.PNG)
+
+  
+
+- 查看任务(16340210 wangdchao)
 
 ![image](image/image5.png)
 
@@ -45,15 +53,24 @@
 
 
 
-- 充值(16341018 ezlaor)
+- 充值(16340211 wanggh8)
 
-![image](image/image9.png)
+![1](assets/1.PNG)
 
-- 提现(16341018 ezlaor)
 
-![image](image/image10.png)
+
+- 提现(16340211 wanggh8)
+
+![2](assets/2.PNG)
+
+
 
 - 投诉(16340209 tang16340209)
 
 ![投诉审核](image/image12.png)
 
++ 注销（16340210wangdchao）
+
+  ![4](assets/4.PNG)
+
+  
