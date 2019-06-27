@@ -5,7 +5,7 @@
       
   此说明面向所有使用闲钱宝的用户或测试开发者，为使用提供更好体验
       
-  #### 1.2[项目背景]( project/about.md)
+  #### 1.2[项目背景]( ../project/about.md)
          
   #### 1.3参考资料
       
@@ -38,9 +38,9 @@
       
 ## 2. 软件概述
   
-  #### 2.1[目标](project/vision.md)
+  #### 2.1[目标](../project/vision.md)
      
-  #### 2.2[功能](project/product_backlog.md)
+  #### 2.2[功能](../project/product_backlog.md)
   
   #### 2.3 性能
   

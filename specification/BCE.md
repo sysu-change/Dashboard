@@ -63,6 +63,32 @@
 
 ## 4.框架映射
 
+### 前端目录结构
+```
+├─ fontend
+| ├─ build
+| ├─ config //以上是webpack前段打包文件夹
+| ├─ node_modules //前端vue框架引入的第三方库、组建、模板
+| ├─ src
+| | ├─ assests //存放前端所需要的图片等静态文件
+| | ├─ components
+| | | ├─ Aut
+| | | | ├─ AccessAcount.vue //用户详细信息组件界面
+| | | | ├─ Register.vue //用户注册组件界面
+| | | | ├─ Signin.vue //用户登录组件界面
+| | | | ├─ 
+| | | ├─ Qus
+| | | ├─ User
+| | | ├─ Task
+| | | ├─ User.vue //用户登录进去后的主界面
+| | ├─ router
+| | | ├─ index.js //vue路由文件
+| | ├─ storage //sessionstorage管理文件
+| ├─ index.html //vue前端项目入口文件
+| ├─ package.json //vue依赖文件，用于指明所需下载的依赖和前端打包
+
+```
+
 ### 后端目录结构
 
 ```
