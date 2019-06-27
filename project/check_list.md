@@ -45,4 +45,4 @@
 
 - [**小组分工与贡献率说明**](../record_documents/contribution.md)
 
-- [**产品效果演示**](exhibitions)
+- [**产品效果演示**](exhibitions.md)

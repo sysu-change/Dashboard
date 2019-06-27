@@ -9,6 +9,10 @@
 | 15331035 | Chenxr1997   | 领域模型图里面QuestionnaireAnswer的问题              | <https://github.com/code-flows-in-you/Dashboard/issues/2>  |
 | 16340209 | tang16340209 | 软件功能不明确的相关问题（定义小组的功能到底是什么） | https://github.com/hhhghh/Dashboard/issues/8               |
 | 16341018 | ezlaor       | 需求审计                                             | https://github.com/system-design2019/docs/issues/3         |
+<<<<<<< HEAD
+=======
+| 16340211 | wanggh8      | 领域模型                                             | <https://github.com/earn-big-money/Dashboard/issues/3>     |
+>>>>>>> 1310c6f1f6c8be0384ad11957415472e592a6853
 ## 2. 设计审计
 
 | 学号     | github-id | 标题     | issue url                                         |
@@ -18,3 +22,8 @@
 | 15331035 | Chenxr1997 | 数据库设计里面里面Problem，QAnswer和Best的问题 | <https://github.com/code-flows-in-you/Dashboard/issues/3> |
 | 16340209 | tang16340209 | UI页面设计评价 | https://github.com/hhhghh/Dashboard/issues/9 |
 |16341018   |ezlaor       |  UI设计审计  |   https://github.com/system-design2019/files/issues/3    |
+<<<<<<< HEAD
+=======
+|16340211 |wanggh8 | UI设计审计                                     | <https://github.com/earn-big-money/front-end/issues/1> |
+
+>>>>>>> 1310c6f1f6c8be0384ad11957415472e592a6853
