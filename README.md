@@ -57,7 +57,7 @@ X4. Tech/Work Report
 - [16340211 - wanggh8 - 前端工作小结](record_documents/16340211_tech1.md)
 - [16340210 - wangdchao - xxx(标题)](record_documents/16340210_tech1.md)
 - [16340209 - tang16340209 - 原型图设计与交互逻辑](https://blog.csdn.net/tangyt77/article/details/90701462)
-- [16340007 - Scott-Cai - xxx(标题)](record_documents/16340007_tech1.md)
+- [16340007 - Scott-Cai - 系分相关博客](record_documents/16340007_tech1.md)
 - [15331035 - Chenxr1997 -git初学者指南](https://chenxr1997.github.io/2019/03/08/系分博客-git篇/)
 - [16341018 - ezlaor - UI工作小结](https://ezlaor.github.io/report.html)
 
